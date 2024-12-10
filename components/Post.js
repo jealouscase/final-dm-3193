@@ -8,9 +8,8 @@ import { useState } from "react"
 const Post = ({ userId, ingredients, instructions, createdAt, difficulty, totalTime, title, servings, imageUrl }) => {
     const formattedDate = new Date(createdAt.seconds * 1000).toLocaleString()
     
-    // Generate demo numbers from createdAt
-    const initialLikes = createdAt.seconds % 900 + 100  // 3 digits (100-999)
-    const initialSaves = createdAt.seconds % 90 + 10   // 2 digits (10-99)
+    const initialLikes = createdAt.seconds % 900 + 100
+    const initialSaves = createdAt.seconds % 90 + 10
     
     const [likes, setLikes] = useState(initialLikes)
     const [saves, setSaves] = useState(initialSaves)
@@ -100,14 +99,14 @@ const Post = ({ userId, ingredients, instructions, createdAt, difficulty, totalT
                     onClick={handleLike}
                 >
                     <FaRegHeart className={isLiked ? "text-pink-500" : ""} />
-                    <p>{likes}</p>
+                    <p className={isLiked ? "text-pink-500" : ""}>{likes}</p>
                 </div>
                 <div 
                     className="flex gap-[6px] items-center cursor-pointer"
                     onClick={handleSave}
                 >
                     <FaRegBookmark className={isSaved ? "text-blue-500" : ""} />
-                    <p>{saves}</p>
+                    <p className={isSaved ? "text-blue-500" : ""}>{saves}</p>
                 </div>
             </div>
         </div>
