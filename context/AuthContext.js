@@ -10,7 +10,7 @@ import {
 } from 'firebase/auth'
 import { useRouter } from "next/navigation"
 
-const AuthContext = createContext()
+const AuthContext = createContext() 
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
