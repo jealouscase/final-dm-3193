@@ -200,7 +200,7 @@ const RecipeForm = () => {
                 <button
                     type="button"
                     onClick={addIngredient}
-                    className="text-blue-600 hover:text-blue-800"
+                    className="text-blue-600 hover:text-blue-700"
                 >
                     + Add Ingredient
                 </button>
