@@ -11,8 +11,8 @@ const NavBar = () => {
     return (
         <div className="flex flex-col gap-6 w-[200px]">
             <Link href="/" className="w-min flex gap-3 text-[24px] items-center"><FiHome className="w-7 h-7"/>Home</Link>
-            <Link href="/" className="w-min flex gap-3 text-[24px] items-center"><FaMagnifyingGlass className="w-7 h-7" />Explore</Link>
-            <Link href="/" className="w-min flex gap-3 text-[24px] items-center"><FaRegBookmark className="w-7 h-7" />Bookmarks</Link>
+            <Link href="/explore" className="w-min flex gap-3 text-[24px] items-center"><FaMagnifyingGlass className="w-7 h-7" />Explore</Link>
+            {/* <Link href="/" className="w-min flex gap-3 text-[24px] items-center"><FaRegBookmark className="w-7 h-7" />Bookmarks</Link> */}
             <nav>
                 <ul className="flex flex-col gap-6 justify-end">
                     {isLoggedIn && (

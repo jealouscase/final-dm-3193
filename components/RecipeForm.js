@@ -13,6 +13,7 @@ const RecipeForm = () => {
         difficulty: 'easy',
         imageUrl: ''
     })
+    const [error, setError] = useState('')
 
     const [ingredients, setIngredients] = useState([{ amount: '', unit: '', item: '', notes: '' }])
     const [instructions, setInstructions] = useState([''])
@@ -63,9 +64,10 @@ const RecipeForm = () => {
                 userId: userInformation.email.split('@')[0]
             }
             const docRef = await addDoc(collection(db, 'recipes'), data)
-            console.log('Recipe added with ID: ', docRef.id)
+            router.push('/')
+            // console.log('Recipe added with ID: ', docRef.id)
         } catch (error) {
-            console.error('Error adding recipe: ', error)
+            setError(error)
         }
     }
 
@@ -81,6 +83,7 @@ const RecipeForm = () => {
                             value={recipeData.title}
                             onChange={handleBasicInfoChange}
                             className="mt-1 block w-full rounded border-gray-300 text-black"
+                            placeholder='One Bowl Chocolate Chip Cookie'
                             required
                         />
                     </div>
@@ -105,6 +108,7 @@ const RecipeForm = () => {
                             value={recipeData.totalTime}
                             onChange={handleBasicInfoChange}
                             className="mt-1 block w-full rounded border-gray-300 text-black"
+                            placeholder='20'
                             required
                         />
                     </div>
@@ -116,6 +120,7 @@ const RecipeForm = () => {
                             value={recipeData.servings}
                             onChange={handleBasicInfoChange}
                             className="mt-1 block w-full rounded border-gray-300 text-black"
+                            placeholder='4'
                             required
                         />
                     </div>
@@ -231,13 +236,14 @@ const RecipeForm = () => {
                 </button>
             </div>
 
-            <div>
+            <div className='flex flex-col text-center gap-2'>
                 <button
                     type="submit"
                     className="w-full bg-[#789DBC] text-white py-2 px-4 rounded hover:bg-blue-600"
                 >
                     Post Recipe
                 </button>
+                {error.length > 0 && <p>{'An error occurred while submitting:' + error}</p>}
             </div>
         </form>
     )

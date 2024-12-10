@@ -41,7 +41,18 @@ const CenterColumn = () => {
             {allPosts ? (
                 <div>
                     {allPosts.map((post, index) => (
-                        <Post key={index} />
+                        <Post 
+                            key={index}
+                            userId={post.userId}
+                            ingredients={post.ingredients}
+                            instructions={post.instructions}
+                            createdAt={post.createdAt}
+                            difficulty={post.difficulty} 
+                            totalTime={post.totalTime}
+                            title={post.title}
+                            servings={post.servings}
+                            imageUrl={post.imageUrl}
+                        />
                     ))}
                 </div>
             ) : (
