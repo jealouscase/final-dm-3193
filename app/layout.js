@@ -27,10 +27,12 @@ export default function RootLayout({ children }) {
                 <body
                     className={`${geistSans.variable} ${geistMono.variable} antialiased flex justify-center`}
                 >
-                    <div className="py-8">
-                        <Header />
-                        <div className="flex gap-[100px]">
+                    <div className="px-8">
+                        <div className="sticky top-0 z-20">
+                            <Header />
                             <NavBar />
+                        </div>
+                        <div className="relative flex justify-center -top-[230px] left-4">
                             {children}
                         </div>
                     </div>

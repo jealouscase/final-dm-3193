@@ -4,7 +4,7 @@ import { FaPlus } from "react-icons/fa6";
 
 const Header = () => {
     return (
-        <div className="flex mb-8 items-center gap-[100px]">
+        <div className="flex py-8 items-center gap-[100px] bg-white">
             <div className="w-[200px] flex items-center gap-2">
                 <LuChefHat className="h-12 w-12" />
                 <Link href={'/'} className="font-semibold text-[36px]">Deglaze</Link>
