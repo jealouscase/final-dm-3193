@@ -62,6 +62,7 @@ const Page = () => {
                 ) : (
                     <p>Loading...</p>
                 )}
+                {error.length > 1 && "An error occurred while fetching the posts:" + error}
             </div>
 
             {selectedPost && (
