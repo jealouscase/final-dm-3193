@@ -96,6 +96,7 @@ const RecipeForm = () => {
                             onChange={handleBasicInfoChange}
                             className="mt-1 block w-full rounded border-gray-300 text-black"
                             placeholder="https://example.com/image.jpg"
+                            required
                         />
                     </div>
                 </div>

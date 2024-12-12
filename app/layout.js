@@ -28,11 +28,11 @@ export default function RootLayout({ children }) {
                     className={`${geistSans.variable} ${geistMono.variable} antialiased flex justify-center`}
                 >
                     <div className="px-8">
-                        <div className="sticky top-0 z-20">
+                        <div className="sticky top-0 z-20 h-28">
                             <Header />
                             <NavBar />
                         </div>
-                        <div className="relative flex justify-center -top-[230px] left-4">
+                        <div className="relative flex justify-center top-[20px] left-4">
                             {children}
                         </div>
                     </div>

@@ -8,9 +8,9 @@ const Page = () => {
     const router = useRouter()
     const { isLoggedIn } = useAuth()
 
-    useEffect(() => {
-        if (!isLoggedIn) router.push('/login')
-    }, [isLoggedIn])
+    // useEffect(() => {
+    //     if (!isLoggedIn) router.push('/login')
+    // }, [isLoggedIn])
 
     return (
         <div>
